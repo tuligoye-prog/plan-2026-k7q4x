@@ -1,0 +1,363 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Plan de estudio 2026//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Facultad de Derecho 2026
+X-WR-TIMEZONE:America/Montevideo
+BEGIN:VTIMEZONE
+TZID:America/Montevideo
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:-0300
+TZOFFSETTO:-0300
+TZNAME:-03
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:evaplan-20261019-1600-1@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261019T160000
+DTEND;TZID=America/Montevideo:20261019T180000
+SUMMARY:DIP: Zonas polares. El Ártico y 
+ el Sistema del Tratado Antártico
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261019-1800-2@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261019T180000
+DTEND;TZID=America/Montevideo:20261019T200000
+SUMMARY:Resp. Civil: Introducción a la r
+ esponsabilidad extracontractual. Ilicit
+ ud. Abuso de derecho
+DESCRIPTION:Docente: Porzio
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261020-1730-3@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261020T173000
+DTEND;TZID=America/Montevideo:20261020T220000
+SUMMARY:Clases de Penal y Laboral
+DESCRIPTION:Derecho Penal y Trabajo y Se
+ guridad Social (martes y jueves).
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261021-1600-4@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261021T160000
+DTEND;TZID=America/Montevideo:20261021T180000
+SUMMARY:DIP: Relaciones entre sujetos. N
+ acionalidad y extranjería. Protección d
+ iplomática. Apatridia
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261021-1800-5@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261021T180000
+DTEND;TZID=America/Montevideo:20261021T200000
+SUMMARY:Resp. Civil: Responsabilidad por
+  el hecho de las cosas. Accidentes de t
+ ránsito
+DESCRIPTION:Docente: Sastre
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261022-1730-6@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261022T173000
+DTEND;TZID=America/Montevideo:20261022T220000
+SUMMARY:Clases de Penal y Laboral
+DESCRIPTION:Derecho Penal y Trabajo y Se
+ guridad Social (martes y jueves).
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261023-1100-7@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261023T110000
+DTEND;TZID=America/Montevideo:20261023T130000
+SUMMARY:Clase de Inglés
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261023-1600-8@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261023T160000
+DTEND;TZID=America/Montevideo:20261023T180000
+SUMMARY:DIP: Migración. Asilo. Refugio. 
+ Extradición
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261026-1600-9@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261026T160000
+DTEND;TZID=America/Montevideo:20261026T180000
+SUMMARY:DIP: Protección internacional de
+  los Derechos Humanos
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261026-1800-10@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261026T180000
+DTEND;TZID=America/Montevideo:20261026T200000
+SUMMARY:Resp. Civil: Responsabilidad por
+  hecho ajeno y por daños causados por i
+ ncapaces (primera parte)
+DESCRIPTION:Docente: Varela
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261027-1730-11@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261027T173000
+DTEND;TZID=America/Montevideo:20261027T220000
+SUMMARY:Clases de Penal y Laboral
+DESCRIPTION:Derecho Penal y Trabajo y Se
+ guridad Social (martes y jueves).
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261028-1600-12@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261028T160000
+DTEND;TZID=America/Montevideo:20261028T180000
+SUMMARY:DIP: Responsabilidad internacion
+ al
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261028-1800-13@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261028T180000
+DTEND;TZID=America/Montevideo:20261028T200000
+SUMMARY:Resp. Civil: Responsabilidad por
+  hecho ajeno y por daños causados por i
+ ncapaces (continuación)
+DESCRIPTION:Docente: Varela
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261029-1730-14@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261029T173000
+DTEND;TZID=America/Montevideo:20261029T220000
+SUMMARY:Clases de Penal y Laboral
+DESCRIPTION:Derecho Penal y Trabajo y Se
+ guridad Social (martes y jueves).
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261030-0000-15@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:PARCIAL Laboral: Parcial de una 
+ hora
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261030-1100-16@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261030T110000
+DTEND;TZID=America/Montevideo:20261030T130000
+SUMMARY:Clase de Inglés
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261030-1600-17@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261030T160000
+DTEND;TZID=America/Montevideo:20261030T180000
+SUMMARY:DIP: Repaso. Taller de casos prá
+ cticos
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261103-1730-18@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261103T173000
+DTEND;TZID=America/Montevideo:20261103T220000
+SUMMARY:Clases de Penal y Laboral
+DESCRIPTION:Derecho Penal y Trabajo y Se
+ guridad Social (martes y jueves).
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261104-1600-19@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261104T160000
+DTEND;TZID=America/Montevideo:20261104T180000
+SUMMARY:DIP: Regulación y validez intern
+ acional de las sanciones y contramedida
+ s
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261104-1800-20@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261104T180000
+DTEND;TZID=America/Montevideo:20261104T200000
+SUMMARY:Resp. Civil: Hecho de los animal
+ es. Cúmulo contractual y extracontractu
+ al. Responsabilidad del Estado
+DESCRIPTION:Docente: Vila
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261105-0000-21@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+SUMMARY:PARCIAL Penal
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261105-1730-22@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261105T173000
+DTEND;TZID=America/Montevideo:20261105T220000
+SUMMARY:Clases de Penal y Laboral
+DESCRIPTION:Derecho Penal y Trabajo y Se
+ guridad Social (martes y jueves).
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261106-0000-23@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:PARCIAL Inglés: Examen final
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261106-1600-24@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261106T160000
+DTEND;TZID=America/Montevideo:20261106T180000
+SUMMARY:DIP: Introducción al Derecho Int
+ ernacional Humanitario
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261109-1600-25@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261109T160000
+DTEND;TZID=America/Montevideo:20261109T180000
+SUMMARY:DIP: Introducción al Derecho Pen
+ al Internacional. Corte Penal Internaci
+ onal
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261109-1800-26@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261109T180000
+DTEND;TZID=America/Montevideo:20261109T200000
+SUMMARY:Resp. Civil: Responsabilidad pre
+ contractual y postcontractual. Defensa 
+ de la competencia
+DESCRIPTION:Docente: Rolón
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261110-1730-27@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261110T173000
+DTEND;TZID=America/Montevideo:20261110T220000
+SUMMARY:Clases de Penal y Laboral
+DESCRIPTION:Derecho Penal y Trabajo y Se
+ guridad Social (martes y jueves).
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261111-1600-28@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261111T160000
+DTEND;TZID=America/Montevideo:20261111T180000
+SUMMARY:DIP: Introducción al Derecho Int
+ ernacional del Medio Ambiente
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261111-1800-29@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261111T180000
+DTEND;TZID=America/Montevideo:20261111T200000
+SUMMARY:Resp. Civil: Relaciones de consu
+ mo: ámbito\, marco general\, productos 
+ y servicios defectuosos
+DESCRIPTION:Docente: Vila
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261112-1730-30@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261112T173000
+DTEND;TZID=America/Montevideo:20261112T220000
+SUMMARY:Clases de Penal y Laboral
+DESCRIPTION:Derecho Penal y Trabajo y Se
+ guridad Social (martes y jueves).
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261113-1600-31@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261113T160000
+DTEND;TZID=America/Montevideo:20261113T180000
+SUMMARY:DIP: Introducción al Derecho Dip
+ lomático y Consular
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261116-1600-32@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261116T160000
+DTEND;TZID=America/Montevideo:20261116T180000
+SUMMARY:DIP: Introducción al Derecho Dip
+ lomático y Consular
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261116-1800-33@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261116T180000
+DTEND;TZID=America/Montevideo:20261116T200000
+SUMMARY:Resp. Civil: Responsabilidad pro
+ fesional. Incumplimiento de obligacione
+ s y de la oferta. Riesgos del desarroll
+ o. Obligación de seguridad
+DESCRIPTION:Docente: Rolón
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261117-0000-34@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:PARCIAL Laboral: Tercer parcial 
+ (trabajador\, empleador y tercerización
+ )
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261117-1730-35@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261117T173000
+DTEND;TZID=America/Montevideo:20261117T220000
+SUMMARY:Clases de Penal y Laboral
+DESCRIPTION:Derecho Penal y Trabajo y Se
+ guridad Social (martes y jueves).
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261118-1600-36@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261118T160000
+DTEND;TZID=America/Montevideo:20261118T180000
+SUMMARY:DIP: Repaso. Taller de casos prá
+ cticos
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261118-1800-37@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261118T180000
+DTEND;TZID=America/Montevideo:20261118T200000
+SUMMARY:Resp. Civil: Tutela aquiliana de
+ l crédito. Repaso para el parcial
+DESCRIPTION:Docente: Vila
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261119-1730-38@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;TZID=America/Montevideo:20261119T173000
+DTEND;TZID=America/Montevideo:20261119T220000
+SUMMARY:Clases de Penal y Laboral
+DESCRIPTION:Derecho Penal y Trabajo y Se
+ guridad Social (martes y jueves).
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261120-0000-39@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:PARCIAL DIP
+END:VEVENT
+BEGIN:VEVENT
+UID:evaplan-20261123-0000-40@plan-estudio-2026
+DTSTAMP:20261017T200000Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:PARCIAL Resp. Civil
+END:VEVENT
+END:VCALENDAR

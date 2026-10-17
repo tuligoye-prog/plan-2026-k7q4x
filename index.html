@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plan de estudio 2026</title>
+<meta name="theme-color" content="#F5F6FB">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Mapa térmico: fondo claro, tipografía grande, un color por materia (más una forma, porque azul, violeta e índigo se parecen). */
+:root{
+  --bg:#F5F6FB; --surface:#FFFFFF; --ink:#15172B; --mute:#5B5F7E; --line:#E1E4EF; --soft:#EDEFF7;
+  --pen:#DB2F77; --rc:#1F7BE8; --dip:#8A35D6; --lab:#3B3DB0; --ing:#D98A00;
+  --ok:#14966B; --warn:#F2A11B; --warn-bg:#FFF2D9; --warn-ink:#5A3A00; --on-c:#FFFFFF;
+  --f-disp:'Bricolage Grotesque','Figtree',system-ui,sans-serif;
+  --f-body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0B0D1A; --surface:#14172C; --ink:#EDEFFF; --mute:#A0A5C8; --line:#262A48; --soft:#1B1F3A;
+  --pen:#FF5C9B; --rc:#5AA6FF; --dip:#B87BFF; --lab:#8A8DFF; --ing:#FFB938;
+  --ok:#3DDBA8; --warn-bg:#2A2110; --warn-ink:#FFE2A8; --on-c:#0B0D1A; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0B0D1A; --surface:#14172C; --ink:#EDEFFF; --mute:#A0A5C8; --line:#262A48; --soft:#1B1F3A;
+  --pen:#FF5C9B; --rc:#5AA6FF; --dip:#B87BFF; --lab:#8A8DFF; --ing:#FFB938;
+  --ok:#3DDBA8; --warn-bg:#2A2110; --warn-ink:#FFE2A8; --on-c:#0B0D1A; color-scheme:dark }
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.5;
+  padding:0 max(16px,env(safe-area-inset-right,0px)) 90px max(16px,env(safe-area-inset-left,0px))}
+.wrap{max-width:980px;margin:0 auto}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--dip);outline-offset:3px;border-radius:8px}
+.mono{font-family:var(--f-mono)}
+.eyebrow{font-family:var(--f-mono);font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+
+/* cabecera */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:22px 0 8px}
+.marca{font-family:var(--f-disp);font-weight:800;font-size:22px;letter-spacing:-.02em}
+.tabs{display:flex;gap:6px;background:var(--soft);padding:5px;border-radius:999px}
+.tabs button{border:0;background:transparent;padding:8px 18px;border-radius:999px;font-weight:600;font-size:15px;color:var(--mute)}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.tools{display:flex;gap:8px}
+.ic{text-decoration:none;color:inherit;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 14px;font-weight:600;font-size:14px}
+
+/* materias */
+.m-pen{--c:var(--pen)} .m-rc{--c:var(--rc)} .m-dip{--c:var(--dip)} .m-lab{--c:var(--lab)} .m-ing{--c:var(--ing)}
+.forma{display:inline-block;width:14px;height:14px;background:var(--c);flex:none}
+.f-circulo{border-radius:50%} .f-cuadrado{border-radius:3px}
+.f-rombo{transform:rotate(45deg) scale(.82);border-radius:2px}
+.f-triangulo{clip-path:polygon(50% 0,100% 100%,0 100%)}
+.f-hexagono{clip-path:polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0 50%)}
+.tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--c)}
+
+/* hoy */
+.dia-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:18px 0 4px}
+.dia-nav .fecha{font-family:var(--f-disp);font-weight:800;font-size:clamp(40px,8vw,72px);line-height:.95;letter-spacing:-.035em;margin:0;text-transform:capitalize}
+.dia-nav .sub{color:var(--mute);margin:6px 0 0}
+.flechas{display:flex;gap:8px}
+.flechas button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);font-size:20px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));margin-top:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:18px;min-width:0}
+.card h3{font-family:var(--f-disp);font-weight:700;font-size:22px;letter-spacing:-.02em;margin:4px 0 12px}
+.vacio{color:var(--mute);margin:0}
+
+.clase{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;padding:12px 14px;border-radius:18px;margin-top:8px;
+  background:color-mix(in oklab,var(--c) 10%,var(--surface));border:1.5px solid color-mix(in oklab,var(--c) 28%,transparent)}
+.clase .hora{font-family:var(--f-mono);font-size:13px;font-weight:600;color:var(--c);grid-row:span 2;padding-top:2px}
+.clase .t{font-weight:600;line-height:1.3}
+.clase .d{font-size:14px;color:var(--mute)}
+.clase.parcial{background:var(--c);color:var(--on-c);border-color:var(--c)}
+.clase.parcial .hora,.clase.parcial .d{color:inherit}
+
+.tarea{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start;padding:12px 0;border-top:1px solid var(--line)}
+.tarea:first-of-type{border-top:0}
+.chk{width:44px;height:44px;border-radius:14px;border:2.5px solid var(--c);background:transparent;display:grid;place-items:center;font-size:19px;font-weight:800;color:var(--on-c)}
+.chk[data-s="1"]{background:linear-gradient(135deg,var(--c) 50%,transparent 50%)}
+.chk[data-s="2"]{background:var(--c)}
+.tarea .t{font-weight:600;line-height:1.3}
+.tarea .d{font-size:14.5px;color:var(--mute);margin-top:2px}
+.tarea[data-s="2"] .t{text-decoration:line-through;text-decoration-thickness:2px;color:var(--mute)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:4px}
+.pill{font-family:var(--f-mono);font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--soft);color:var(--mute)}
+.pill.prov{background:var(--warn-bg);color:var(--warn-ink)}
+.atras{border:2px solid var(--warn);background:var(--warn-bg);color:var(--warn-ink);border-radius:20px;padding:12px 16px;margin-top:14px}
+.atras b{font-family:var(--f-disp)}
+
+/* parciales */
+.par{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 16px;border-radius:20px;margin-top:10px;
+  background:var(--surface);border:2px solid color-mix(in oklab,var(--c) 45%,transparent)}
+.par .n{font-family:var(--f-disp);font-weight:800;font-size:44px;line-height:.9;letter-spacing:-.04em;color:var(--c);min-width:2ch;text-align:center}
+.par .n small{display:block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;color:var(--mute);font-weight:600}
+.par .t{font-weight:700}
+.par .d{font-size:14px;color:var(--mute)}
+.par.pasado{opacity:.5}
+
+/* semana */
+.sem{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));margin-top:16px}
+.sem .dia{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:14px;min-width:0}
+.sem .dia.hoy{border:2px solid var(--ink)}
+.sem .dia h4{font-family:var(--f-disp);font-size:18px;margin:0 0 6px;text-transform:capitalize}
+.sem .it{display:flex;gap:8px;align-items:flex-start;font-size:14.5px;line-height:1.3;margin-top:7px}
+.sem .it .forma{margin-top:3px}
+
+.aviso{margin-top:22px;font-size:13.5px;color:var(--mute)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:600;
+  opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.on{opacity:1}
+[hidden]{display:none !important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div><div class="eyebrow">Abogacía · FDER</div><div class="marca">Plan de estudio 2026</div></div>
+    <nav class="tabs" role="tablist" aria-label="Vistas">
+      <button role="tab" aria-selected="true" data-v="hoy">Hoy</button>
+      <button role="tab" aria-selected="false" data-v="semana">Semana</button>
+      <button role="tab" aria-selected="false" data-v="parciales">Parciales</button>
+    </nav>
+    <div class="tools"><a class="ic" href="clases_y_parciales.ics" download>Calendario (.ics)</a><button class="ic" id="btn-copiar" type="button">Copiar avance</button><button class="ic" id="btn-tema" type="button" aria-label="Cambiar entre claro y oscuro">Claro / oscuro</button></div>
+  </header>
+
+  <main>
+    <section id="v-hoy">
+      <div class="dia-nav">
+        <div><p class="fecha" id="h-fecha"></p><p class="sub" id="h-sub"></p></div>
+        <div class="flechas"><button type="button" id="h-prev" aria-label="Día anterior">‹</button><button type="button" id="h-hoy" aria-label="Volver a hoy">●</button><button type="button" id="h-next" aria-label="Día siguiente">›</button></div>
+      </div>
+      <div id="h-atras"></div>
+      <div class="grid">
+        <div class="card"><div class="eyebrow">En la facultad</div><h3>Clases y parciales</h3><div id="h-clases"></div></div>
+        <div class="card"><div class="eyebrow">En casa</div><h3>Para hacer hoy</h3><div id="h-tareas"></div></div>
+        <div class="card"><div class="eyebrow">Próximo</div><h3 id="h-prox-tit">Parcial</h3><div id="h-prox"></div></div>
+      </div>
+    </section>
+
+    <section id="v-semana" hidden>
+      <div class="dia-nav"><div><p class="fecha" id="s-tit"></p><p class="sub" id="s-sub"></p></div>
+        <div class="flechas"><button type="button" id="s-prev" aria-label="Semana anterior">‹</button><button type="button" id="s-hoy" aria-label="Esta semana">●</button><button type="button" id="s-next" aria-label="Semana siguiente">›</button></div></div>
+      <div class="sem" id="s-dias"></div>
+    </section>
+
+    <section id="v-parciales" hidden>
+      <div class="dia-nav"><div><p class="fecha">Parciales</p><p class="sub">En orden de fecha, con los días que faltan.</p></div></div>
+      <div id="p-lista"></div>
+    </section>
+  </main>
+  <p class="aviso" id="aviso"></p>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const DATA = {"version":"borrador v3 del 17/10/2026","inicio":"2026-10-17","fin":"2026-11-23","aviso":"Borrador: lo marcado como provisorio depende de supuestos que todavía no se confirmaron (temarios, horarios exactos de los parciales, ritmo de lectura).","materias":[{"id":"pen","nombre":"Derecho Penal","corto":"Penal","css":"pen","forma":"circulo"},{"id":"rc","nombre":"Responsabilidad Civil","corto":"Resp. Civil","css":"rc","forma":"cuadrado"},{"id":"dip","nombre":"Derecho Internacional Público","corto":"DIP","css":"dip","forma":"rombo"},{"id":"lab","nombre":"Trabajo y Seguridad Social","corto":"Laboral","css":"lab","forma":"triangulo"},{"id":"ing","nombre":"Inglés","corto":"Inglés","css":"ing","forma":"hexagono"},{"id":"gen","nombre":"Penal y Laboral","corto":"Clases","css":"mute","forma":"cuadrado"}],"parciales":[{"m":"lab","f":"2026-10-30","t":"Parcial de una hora","h":"","i":"20:00","e":"22:00"},{"m":"pen","f":"2026-11-05","t":"Parcial","h":"","i":"17:30","e":"22:00"},{"m":"ing","f":"2026-11-06","t":"Examen final","h":"","i":"11:00","e":"13:00"},{"m":"lab","f":"2026-11-17","t":"Tercer parcial (trabajador, empleador y tercerización)","h":"","i":"17:30","e":"22:00"},{"m":"dip","f":"2026-11-20","t":"Segundo parcial","h":"","i":"16:00","e":"18:00"},{"m":"rc","f":"2026-11-23","t":"Parcial final","h":"","i":"18:00","e":"20:00"}],"horarios":{"0":"Domingo libre.","1":"Clases de 15:30 a 20:00: DIP de 16:00 a 18:00 y Resp. Civil de 18:00 a 20:00. Podés estudiar hasta las 15:30.","2":"Clases de 17:30 a 22:00 (Penal y Laboral). Podés estudiar hasta las 17:30.","3":"Clases de 15:30 a 20:00: DIP de 16:00 a 18:00 y Resp. Civil de 18:00 a 20:00. Podés estudiar hasta las 15:30.","4":"Clases de 17:30 a 22:00 (Penal y Laboral). Podés estudiar hasta las 17:30.","5":"DIP de 16:00 a 18:00 (salís a las 15:30). Inglés de 11:00 a 13:00 y, algunos viernes, clase de 20:00 a 22:00 (probablemente Laboral).","6":"Sábado: bloque fijo de 3 h solo en las semanas más cargadas; el resto libre."},"eventos":[{"f":"2026-10-02","m":"dip","t":"Relaciones entre el DIP y el derecho interno. El problema en nuestro país","h":"16:00 a 18:00"},{"f":"2026-10-05","m":"dip","t":"Condición y régimen de los espacios internacionales. Dominio fluvial: cursos de aguas internacionales. Tratado del Río Uruguay","h":"16:00 a 18:00"},{"f":"2026-10-07","m":"dip","t":"Tratado del Río de la Plata y su frente marítimo","h":"16:00 a 18:00"},{"f":"2026-10-09","m":"dip","t":"Espacio aéreo y espacio ultraterrestre","h":"16:00 a 18:00"},{"f":"2026-10-14","m":"dip","t":"Derecho del mar: espejo y volumen de aguas","h":"16:00 a 18:00"},{"f":"2026-10-16","m":"dip","t":"Derecho del mar: lecho y subsuelo. Tribunal Internacional de Derecho del Mar","h":"16:00 a 18:00"},{"f":"2026-10-19","m":"dip","t":"Zonas polares. El Ártico y el Sistema del Tratado Antártico","h":"16:00 a 18:00"},{"f":"2026-10-21","m":"dip","t":"Relaciones entre sujetos. Nacionalidad y extranjería. Protección diplomática. Apatridia","h":"16:00 a 18:00"},{"f":"2026-10-23","m":"dip","t":"Migración. Asilo. Refugio. Extradición","h":"16:00 a 18:00"},{"f":"2026-10-26","m":"dip","t":"Protección internacional de los Derechos Humanos","h":"16:00 a 18:00"},{"f":"2026-10-28","m":"dip","t":"Responsabilidad internacional","h":"16:00 a 18:00"},{"f":"2026-10-30","m":"dip","t":"Repaso. Taller de casos prácticos","h":"16:00 a 18:00"},{"f":"2026-11-04","m":"dip","t":"Regulación y validez internacional de las sanciones y contramedidas","h":"16:00 a 18:00"},{"f":"2026-11-06","m":"dip","t":"Introducción al Derecho Internacional Humanitario","h":"16:00 a 18:00"},{"f":"2026-11-09","m":"dip","t":"Introducción al Derecho Penal Internacional. Corte Penal Internacional","h":"16:00 a 18:00"},{"f":"2026-11-11","m":"dip","t":"Introducción al Derecho Internacional del Medio Ambiente","h":"16:00 a 18:00"},{"f":"2026-11-13","m":"dip","t":"Introducción al Derecho Diplomático y Consular","h":"16:00 a 18:00"},{"f":"2026-11-16","m":"dip","t":"Introducción al Derecho Diplomático y Consular","h":"16:00 a 18:00"},{"f":"2026-11-18","m":"dip","t":"Repaso. Taller de casos prácticos","h":"16:00 a 18:00"},{"f":"2026-11-20","m":"dip","t":"SEGUNDO PARCIAL","h":"","parcial":true},{"f":"2026-10-07","m":"rc","t":"Revisión del parcial. Acción pauliana, subrogatoria y simulatoria","h":"18:00 a 20:00","d":"Varela"},{"f":"2026-10-14","m":"rc","t":"Cláusula penal. Arras confirmatorias. Multa penitencial. Astreintes y penas privadas. Liquidación anticipada de daños","h":"18:00 a 20:00","d":"Matteo"},{"f":"2026-10-19","m":"rc","t":"Introducción a la responsabilidad extracontractual. Ilicitud. Abuso de derecho","h":"18:00 a 20:00","d":"Porzio"},{"f":"2026-10-21","m":"rc","t":"Responsabilidad por el hecho de las cosas. Accidentes de tránsito","h":"18:00 a 20:00","d":"Sastre"},{"f":"2026-10-26","m":"rc","t":"Responsabilidad por hecho ajeno y por daños causados por incapaces (primera parte)","h":"18:00 a 20:00","d":"Varela"},{"f":"2026-10-28","m":"rc","t":"Responsabilidad por hecho ajeno y por daños causados por incapaces (continuación)","h":"18:00 a 20:00","d":"Varela"},{"f":"2026-11-04","m":"rc","t":"Hecho de los animales. Cúmulo contractual y extracontractual. Responsabilidad del Estado","h":"18:00 a 20:00","d":"Vila"},{"f":"2026-11-09","m":"rc","t":"Responsabilidad precontractual y postcontractual. Defensa de la competencia","h":"18:00 a 20:00","d":"Rolón"},{"f":"2026-11-11","m":"rc","t":"Relaciones de consumo: ámbito, marco general, productos y servicios defectuosos","h":"18:00 a 20:00","d":"Vila"},{"f":"2026-11-16","m":"rc","t":"Responsabilidad profesional. Incumplimiento de obligaciones y de la oferta. Riesgos del desarrollo. Obligación de seguridad","h":"18:00 a 20:00","d":"Rolón"},{"f":"2026-11-18","m":"rc","t":"Tutela aquiliana del crédito. Repaso para el parcial","h":"18:00 a 20:00","d":"Vila"},{"f":"2026-11-23","m":"rc","t":"PARCIAL FINAL","h":"","parcial":true},{"f":"2026-10-30","m":"lab","t":"Parcial de una hora","h":"","parcial":true},{"f":"2026-11-05","m":"pen","t":"Parcial","h":"","parcial":true},{"f":"2026-11-06","m":"ing","t":"Examen final","h":"","parcial":true},{"f":"2026-11-17","m":"lab","t":"Tercer parcial (trabajador, empleador y tercerización)","h":"","parcial":true},{"f":"2026-10-20","m":"gen","t":"Clases de Penal y Laboral","h":"17:30 a 22:00","d":"Derecho Penal y Trabajo y Seguridad Social"},{"f":"2026-10-22","m":"gen","t":"Clases de Penal y Laboral","h":"17:30 a 22:00","d":"Derecho Penal y Trabajo y Seguridad Social"},{"f":"2026-10-27","m":"gen","t":"Clases de Penal y Laboral","h":"17:30 a 22:00","d":"Derecho Penal y Trabajo y Seguridad Social"},{"f":"2026-10-29","m":"gen","t":"Clases de Penal y Laboral","h":"17:30 a 22:00","d":"Derecho Penal y Trabajo y Seguridad Social"},{"f":"2026-11-03","m":"gen","t":"Clases de Penal y Laboral","h":"17:30 a 22:00","d":"Derecho Penal y Trabajo y Seguridad Social"},{"f":"2026-11-05","m":"gen","t":"Clases de Penal y Laboral","h":"17:30 a 22:00","d":"Derecho Penal y Trabajo y Seguridad Social"},{"f":"2026-11-10","m":"gen","t":"Clases de Penal y Laboral","h":"17:30 a 22:00","d":"Derecho Penal y Trabajo y Seguridad Social"},{"f":"2026-11-12","m":"gen","t":"Clases de Penal y Laboral","h":"17:30 a 22:00","d":"Derecho Penal y Trabajo y Seguridad Social"},{"f":"2026-11-17","m":"gen","t":"Clases de Penal y Laboral","h":"17:30 a 22:00","d":"Derecho Penal y Trabajo y Seguridad Social"},{"f":"2026-11-19","m":"gen","t":"Clases de Penal y Laboral","h":"17:30 a 22:00","d":"Derecho Penal y Trabajo y Seguridad Social"},{"f":"2026-10-23","m":"ing","t":"Clase de Inglés","h":"11:00 a 13:00"},{"f":"2026-10-30","m":"ing","t":"Clase de Inglés","h":"11:00 a 13:00"},{"f":"2026-11-13","m":"lab","t":"Sin clase de Laboral (suspendida)","h":""}],"sesiones":[{"id":"2026-10-19-lab-1","f":"2026-10-19","m":"lab","min":120,"b":"1","tipo":"lectura","n":1,"prov":false,"t":"Laboral: Convenio 87 (libertad sindical)","d":"En EVA (Tema 8): \"CIT 87\" (PDF de 7 págs.), \"LIBERTAD SINDICAL\" (PDF de 9 págs.) y \"Libertad sindical, PPT completo\" (unas 37 diapositivas). En el resumen de Laboral: págs. 1, 9, 12 a 14 y 45.","opt":false},{"id":"2026-10-19-pen-1","f":"2026-10-19","m":"pen","min":120,"b":"2","tipo":"repaso","n":2,"prov":true,"t":"Penal 1: repaso, págs. 1 a 12","d":"Resumen Penal 1 págs. 1 a 12: introducción, dogmática, teoría del delito y bien jurídico. Repaso rápido (supuesto: este resumen, del 6/10, ya se había trabajado).","opt":false},{"id":"2026-10-20-lab-1","f":"2026-10-20","m":"lab","min":120,"b":"1","tipo":"lectura","n":1,"prov":false,"t":"Laboral: artículo 19 numeral 8 de la OIT y condición más beneficiosa","d":"En EVA (Fuentes): las dos presentaciones \"OIT\" (19 y 21 diapositivas). En el resumen de Laboral: págs. 22 a 28 (clasificación de principios, condición más beneficiosa, artículo 19 numeral 8 de la Constitución de la OIT). Al final, 3 preguntas sin apuntes.","opt":false},{"id":"2026-10-20-pen-1","f":"2026-10-20","m":"pen","min":120,"b":"2","tipo":"repaso","n":2,"prov":true,"t":"Penal 1: repaso, págs. 13 a 24","d":"Resumen Penal 1 págs. 13 a 24: acción, conducta y omisión.","opt":false},{"id":"2026-10-21-dip-1","f":"2026-10-21","m":"dip","min":60,"b":"1","tipo":"armar","n":2,"prov":true,"t":"DIP: nacionalidad, protección diplomática y apatridia (clase de hoy, 16:00)","d":"Preparar la clase de hoy. Sin resumen y sin material publicado en EVA todavía (la sección está vacía): armar con la bibliografía del programa en NotebookLM o esperar la presentación de la clase.","opt":false},{"id":"2026-10-21-rc-1","f":"2026-10-21","m":"rc","min":60,"b":"1","tipo":"armar","n":2,"prov":true,"t":"Resp. Civil: hecho de las cosas y accidentes de tránsito (clase de hoy, 18:00)","d":"En EVA (Responsabilidad extracontractual: 44 archivos y unas 525 págs.; más 17 documentos sin contar). Empezar por la guía de clase de EVA de este tema y armar el resumen en NotebookLM desde ahí. Bibliografía básica: Gamarra, Tratado t. XXI.","opt":false},{"id":"2026-10-21-pen-1","f":"2026-10-21","m":"pen","min":120,"b":"2","tipo":"repaso","n":2,"prov":true,"t":"Penal 1: repaso, págs. 25 a 35","d":"Resumen Penal 1 págs. 25 a 35: tipicidad objetiva, causalidad e imputación objetiva.","opt":false},{"id":"2026-10-22-dip-1","f":"2026-10-22","m":"dip","min":60,"b":"1","tipo":"armar","n":2,"prov":true,"t":"DIP: migración, asilo, refugio y extradición (clase del 23/10)","d":"Preparar la clase del día siguiente. Sin resumen y sin material publicado en EVA todavía (la sección está vacía): armar con la bibliografía del programa en NotebookLM o esperar la presentación de la clase.","opt":false},{"id":"2026-10-22-dip-2","f":"2026-10-22","m":"dip","min":60,"b":"1","tipo":"armar","n":2,"prov":true,"t":"DIP: protección internacional de los derechos humanos (clase del 26/10)","d":"Preparar la clase del lunes. No tiene resumen.","opt":false},{"id":"2026-10-22-pen-1","f":"2026-10-22","m":"pen","min":120,"b":"2","tipo":"repaso","n":2,"prov":true,"t":"Penal 1: repaso, págs. 36 a 49","d":"Resumen Penal 1 págs. 36 a 49: cierre de bien jurídico, error del agente y desviación del curso causal.","opt":false},{"id":"2026-10-23-pen-1","f":"2026-10-23","m":"pen","min":120,"b":"1","tipo":"lectura","n":1,"prov":true,"t":"Penal 2: lectura, págs. 1 a 7","d":"Resumen Penal 2 págs. 1 a 7: tipicidad subjetiva, dolo y culpa. Primera lectura, subrayar.","opt":false},{"id":"2026-10-23-pen-2","f":"2026-10-23","m":"pen","min":120,"b":"2","tipo":"lectura","n":1,"prov":true,"t":"Penal 2: lectura, págs. 8 a 13","d":"Resumen Penal 2 págs. 8 a 13: caso fortuito, antijuridicidad, causas de justificación. Primera lectura, subrayar.","opt":false},{"id":"2026-10-24-pen-1","f":"2026-10-24","m":"pen","min":120,"b":"S","tipo":"lectura","n":1,"prov":true,"t":"Penal 2: lectura, págs. 14 a 20","d":"Resumen Penal 2 págs. 14 a 20: culpabilidad, imputabilidad, exigibilidad.","opt":false},{"id":"2026-10-24-pen-2","f":"2026-10-24","m":"pen","min":60,"b":"S","tipo":"preguntas","n":1,"prov":true,"t":"Penal: preguntas sin apuntes (1)","d":"Explicar en voz alta tipicidad subjetiva, antijuridicidad y culpabilidad sin mirar el resumen; marcar lo que no salió.","opt":false},{"id":"2026-10-26-rc-1","f":"2026-10-26","m":"rc","min":60,"b":"1","tipo":"armar","n":2,"prov":true,"t":"Resp. Civil: hecho ajeno e incapaces (clases del 26/10 y 28/10)","d":"En EVA, sección de responsabilidad extracontractual: empezar por la guía de clase de este tema. Bibliografía básica: Gamarra, Tratado t. XX, parte IV. Parte ya aparece en los resúmenes RC.","opt":false},{"id":"2026-10-26-dip-1","f":"2026-10-26","m":"dip","min":60,"b":"1","tipo":"armar","n":2,"prov":true,"t":"DIP: responsabilidad internacional (clase del 28/10)","d":"Preparar la clase del miércoles. No tiene resumen.","opt":false},{"id":"2026-10-26-pen-1","f":"2026-10-26","m":"pen","min":120,"b":"2","tipo":"lectura","n":1,"prov":true,"t":"Penal 2: lectura, págs. 21 a 31","d":"Resumen Penal 2 págs. 21 a 31: error, condiciones objetivas de punibilidad, excusas absolutorias, extinción (prescripción, perdón).","opt":false},{"id":"2026-10-27-pen-1","f":"2026-10-27","m":"pen","min":60,"b":"1","tipo":"armar","n":1,"prov":true,"t":"Penal, unidad pendiente 1 (probable: proceso ejecutivo del delito): armar el resumen","d":"Armar con NotebookLM el resumen de la unidad pendiente 1 (tema a confirmar, no hay cronograma de Penal).","opt":false},{"id":"2026-10-27-pen-2","f":"2026-10-27","m":"pen","min":60,"b":"1","tipo":"lectura","n":1,"prov":true,"t":"Penal, unidad pendiente 1 (probable: proceso ejecutivo del delito): leer (1/3)","d":"Leer y subrayar el resumen de la unidad pendiente 1.","opt":false},{"id":"2026-10-27-pen-3","f":"2026-10-27","m":"pen","min":120,"b":"2","tipo":"lectura","n":1,"prov":true,"t":"Penal, unidad pendiente 1 (probable: proceso ejecutivo del delito): leer (2/3 y 3/3)","d":"Terminar de leer y subrayar la unidad pendiente 1.","opt":false},{"id":"2026-10-28-pen-1","f":"2026-10-28","m":"pen","min":60,"b":"1","tipo":"armar","n":1,"prov":true,"t":"Penal, unidad pendiente 2 (probable: concurso de delitos): armar el resumen","d":"Armar con NotebookLM el resumen de la unidad pendiente 2.","opt":false},{"id":"2026-10-28-pen-2","f":"2026-10-28","m":"pen","min":60,"b":"1","tipo":"lectura","n":1,"prov":true,"t":"Penal, unidad pendiente 2 (probable: concurso de delitos): leer (1/3)","d":"Leer y subrayar el resumen de la unidad pendiente 2.","opt":false},{"id":"2026-10-28-pen-3","f":"2026-10-28","m":"pen","min":120,"b":"2","tipo":"lectura","n":1,"prov":true,"t":"Penal, unidad pendiente 2 (probable: concurso de delitos): leer (2/3 y 3/3)","d":"Terminar de leer y subrayar la unidad pendiente 2.","opt":false},{"id":"2026-10-29-pen-1","f":"2026-10-29","m":"pen","min":60,"b":"1","tipo":"armar","n":1,"prov":true,"t":"Penal, unidad pendiente 3 (probable: concurso de delincuentes): armar el resumen","d":"Armar con NotebookLM el resumen de la unidad pendiente 3.","opt":false},{"id":"2026-10-29-pen-2","f":"2026-10-29","m":"pen","min":60,"b":"1","tipo":"lectura","n":1,"prov":true,"t":"Penal, unidad pendiente 3 (probable: concurso de delincuentes): leer (1/3)","d":"Leer y subrayar el resumen de la unidad pendiente 3.","opt":false},{"id":"2026-10-29-pen-3","f":"2026-10-29","m":"pen","min":120,"b":"2","tipo":"preguntas","n":1,"prov":true,"t":"Penal: autoevaluación de lo leído","d":"Preguntas sin apuntes sobre Penal 1, Penal 2 y las unidades pendientes 1 y 2. Anotar qué falló y repasarlo después.","opt":false},{"id":"2026-10-30-lab-1","f":"2026-10-30","m":"lab","min":60,"b":"1","tipo":"preguntas","n":1,"prov":false,"t":"Laboral: repaso final antes del parcial","d":"Parcial de una hora: Convenio 87 y artículo 19 numeral 8 de la OIT. Preguntas sin apuntes sobre lo de la semana 1.","opt":false},{"id":"2026-10-30-dip-1","f":"2026-10-30","m":"dip","min":60,"b":"1","tipo":"armar","n":2,"prov":true,"t":"DIP: sanciones y contramedidas (clase del 4/11)","d":"Preparar la clase del miércoles 4/11 con anticipación. No tiene resumen.","opt":false},{"id":"2026-10-31-pen-1","f":"2026-10-31","m":"pen","min":120,"b":"S","tipo":"lectura","n":1,"prov":true,"t":"Penal, unidad pendiente 3 (probable: concurso de delincuentes): leer (2/3 y 3/3)","d":"Terminar de leer y subrayar la unidad pendiente 3.","opt":false},{"id":"2026-10-31-pen-2","f":"2026-10-31","m":"pen","min":60,"b":"S","tipo":"armar","n":1,"prov":true,"t":"Penal, unidad pendiente 4 (probable: la pena): armar el resumen","d":"Armar con NotebookLM el resumen de la unidad pendiente 4.","opt":false},{"id":"2026-11-03-pen-1","f":"2026-11-03","m":"pen","min":120,"b":"1","tipo":"lectura","n":1,"prov":true,"t":"Penal, unidad pendiente 4 (probable: la pena): leer (1/2)","d":"Leer y subrayar el resumen de la unidad pendiente 4.","opt":false},{"id":"2026-11-03-pen-2","f":"2026-11-03","m":"pen","min":60,"b":"2","tipo":"lectura","n":1,"prov":true,"t":"Penal, unidad pendiente 4 (probable: la pena): leer (2/2)","d":"Terminar de leer y subrayar la unidad pendiente 4.","opt":false},{"id":"2026-11-03-ing-1","f":"2026-11-03","m":"ing","min":60,"b":"2","tipo":"lectura","n":2,"prov":false,"t":"Inglés: unidades 6 y 7","d":"Unidad 6 (sufijos, texto \"Imposter\", negativos) y unidad 7 (palabras compuestas, texto sobre autoconfianza y ascensos), en EVA. Después de la clase del 30/10 ya están las unidades 6 a 10.","opt":false},{"id":"2026-11-04-pen-1","f":"2026-11-04","m":"pen","min":120,"b":"1","tipo":"preguntas","n":1,"prov":true,"t":"Penal: preguntas sin apuntes (2)","d":"Explicar cada unidad sin mirar. Dejar anotado lo que no sale para el repaso final.","opt":false},{"id":"2026-11-04-ing-1","f":"2026-11-04","m":"ing","min":120,"b":"2","tipo":"lectura","n":2,"prov":false,"t":"Inglés: unidades 8, 9 y 10","d":"Unidad 8 (pronombres relativos y texto sobre trabajo flexible en el derecho). Las unidades 9 y 10 se dieron el 23/10 y 30/10 y todavía no están publicadas en EVA: usar la presentación de clase.","opt":false},{"id":"2026-11-05-pen-1","f":"2026-11-05","m":"pen","min":120,"b":"1","tipo":"repaso","n":1,"prov":true,"t":"Penal: repaso final antes del parcial","d":"Parcial del 5/11 (jueves). Repaso de subrayados y de lo que falló en las autoevaluaciones. No empezar temas nuevos.","opt":false},{"id":"2026-11-06-ing-1","f":"2026-11-06","m":"ing","min":120,"b":"1","tipo":"preguntas","n":2,"prov":false,"t":"Inglés: repaso final antes del examen","d":"Examen final del 6/11 (viernes, sala 1 y Zoom). Repaso de gramática y vocabulario de las unidades 6 a 10; si el final incluye las unidades 1 a 5, repasar sus cuestionarios.","opt":false},{"id":"2026-11-07-dip-1","f":"2026-11-07","m":"dip","min":60,"b":"S","tipo":"armar","n":2,"prov":true,"t":"DIP: uso de la fuerza, legítima defensa y seguridad colectiva (clase del 21/9)","d":"En EVA (sección de principios): \"Prohibición del uso de la fuerza en el DIP\" (22 págs.), \"Uso de la fuerza, legítima defensa\" (28 págs.) y \"Medidas colectivas\" (28 págs.): 78 páginas de presentaciones. Armar el resumen en NotebookLM desde ahí y leerlo. Incluye seguridad colectiva y misiones de paz.","opt":false},{"id":"2026-11-07-dip-2","f":"2026-11-07","m":"dip","min":60,"b":"S","tipo":"armar","n":2,"prov":true,"t":"DIP: solución pacífica de controversias (clase del 23/9)","d":"En EVA: \"Solución pacífica de controversias\" (presentación), \"SOLUCION PACÍFICA DE CONTROVERSIAS\" (18 págs.) y \"SISTEMA JURIDICO INTERNACIONAL\" (44 págs.). Unas 62 páginas más una presentación. Armar el resumen en NotebookLM y leerlo.","opt":false},{"id":"2026-11-07-dip-3","f":"2026-11-07","m":"dip","min":60,"b":"S","tipo":"armar","n":2,"prov":true,"t":"DIP: principios del DIP (clase del 28/9)","d":"La sección de EVA está vacía (no hay material publicado). Usar el resumen DIP 2 (que toca igualdad soberana) y la bibliografía del programa. Igualdad soberana, buena fe, no intervención, libre determinación, cooperación.","opt":false},{"id":"2026-11-09-lab-1","f":"2026-11-09","m":"lab","min":120,"b":"1","tipo":"lectura","n":1,"prov":false,"t":"Laboral para el 17/11: el trabajador","d":"En EVA (Tema 5): presentación \"EL TRABAJADOR\" (unas 62 diapositivas) y resumen de Laboral págs. 36 a 38. Parcial del 17/11: trabajador, empleador y tercerización.","opt":false},{"id":"2026-11-09-dip-1","f":"2026-11-09","m":"dip","min":60,"b":"2","tipo":"armar","n":2,"prov":true,"t":"DIP: relaciones entre el DIP y el derecho interno (clase del 2/10)","d":"En EVA: una presentación de 29 págs. Armar el resumen en NotebookLM y leerlo. El problema en nuestro país.","opt":false},{"id":"2026-11-09-dip-2","f":"2026-11-09","m":"dip","min":60,"b":"2","tipo":"armar","n":2,"prov":true,"t":"DIP: cursos de agua internacionales y Tratado del Río Uruguay (clase del 5/10)","d":"En EVA: una presentación de 21 págs. Las fronteras con el Río Uruguay ya aparecen en DIP 1 págs. 50 a 63 (confirmar que alcanza).","opt":false},{"id":"2026-11-10-dip-1","f":"2026-11-10","m":"dip","min":60,"b":"1","tipo":"armar","n":2,"prov":true,"t":"DIP: Río de la Plata, espacio aéreo y ultraterrestre (clases del 7/10 y 9/10)","d":"En EVA: Río de la Plata (presentación de 19 págs.), dominio aéreo (47 págs.) y espacio ultraterrestre (25 págs.): 91 páginas de presentaciones. Armar el resumen en NotebookLM y leerlo.","opt":false},{"id":"2026-11-10-dip-2","f":"2026-11-10","m":"dip","min":60,"b":"1","tipo":"armar","n":2,"prov":true,"t":"DIP: derecho del mar (clases del 14/10 y 16/10)","d":"En EVA: espejo y volumen de aguas (12 págs.) y lecho y subsuelo con el Tribunal Internacional (33 págs.): 45 páginas de presentaciones.","opt":false},{"id":"2026-11-10-rc-1","f":"2026-11-10","m":"rc","min":60,"b":"2","tipo":"armar","n":2,"prov":true,"t":"Resp. Civil: acciones pauliana, subrogatoria y simulatoria (clase del 7/10)","d":"No tiene resumen. Bibliografía: Gamarra, Tutela preventiva del crédito, págs. 231 a 278, y Tratado t. XIII (Simulación).","opt":false},{"id":"2026-11-10-rc-2","f":"2026-11-10","m":"rc","min":60,"b":"2","tipo":"armar","n":2,"prov":true,"t":"Resp. Civil: cláusula penal, arras y astreintes (clase del 14/10)","d":"No tiene resumen. Bibliografía básica: Gamarra, Tratado t. 18, cap. 10 y sección de garantías y penas civiles.","opt":false},{"id":"2026-11-11-lab-1","f":"2026-11-11","m":"lab","min":120,"b":"1","tipo":"lectura","n":1,"prov":false,"t":"Laboral para el 17/11: el empleador","d":"En EVA (Tema 5): presentación \"EL EMPLEADOR\" (unas 65 diapositivas), \"Personería laboral del empleador. Conjunto económico\" (unas 49, solo si alcanza) y resumen de Laboral págs. 34 a 35.","opt":false},{"id":"2026-11-11-dip-1","f":"2026-11-11","m":"dip","min":60,"b":"2","tipo":"armar","n":2,"prov":true,"t":"DIP: zonas polares (clase del 19/10)","d":"En EVA: presentación de 13 diapositivas. Ártico y Sistema del Tratado Antártico.","opt":false},{"id":"2026-11-11-dip-2","f":"2026-11-11","m":"dip","min":60,"b":"2","tipo":"armar","n":2,"prov":true,"t":"DIP: derecho internacional humanitario (clase del 6/11)","d":"Sin resumen y sin material publicado en EVA todavía (la sección está vacía): armar con la bibliografía del programa.","opt":false},{"id":"2026-11-12-dip-1","f":"2026-11-12","m":"dip","min":60,"b":"1","tipo":"armar","n":2,"prov":true,"t":"DIP: derecho penal internacional y Corte Penal Internacional (clase del 9/11)","d":"Sin resumen y sin material publicado en EVA todavía (la sección está vacía): armar con la bibliografía del programa.","opt":false},{"id":"2026-11-12-dip-2","f":"2026-11-12","m":"dip","min":60,"b":"1","tipo":"armar","n":2,"prov":true,"t":"DIP: derecho internacional del medio ambiente (clase del 11/11)","d":"Sin resumen y sin material publicado en EVA todavía (la sección está vacía): armar con la bibliografía del programa.","opt":false},{"id":"2026-11-12-dip-3","f":"2026-11-12","m":"dip","min":90,"b":"2","tipo":"armar","n":2,"prov":true,"t":"DIP: derecho diplomático y consular (clases del 13/11 y 16/11)","d":"Sin resumen y sin material publicado en EVA todavía (la sección está vacía): armar con la bibliografía del programa.","opt":false},{"id":"2026-11-12-rc-1","f":"2026-11-12","m":"rc","min":30,"b":"2","tipo":"repaso","n":3,"prov":true,"t":"Resp. Civil: ilicitud y abuso de derecho, repaso (clase del 19/10)","d":"Ya está en los resúmenes RC (abuso de derecho e ilicitud); solo repasar.","opt":false},{"id":"2026-11-13-lab-1","f":"2026-11-13","m":"lab","min":60,"b":"1","tipo":"armar","n":1,"prov":false,"t":"Laboral para el 17/11: tercerización y leyes 18.099 y 18.251","d":"En EVA (Tema 5): presentación \"TERCERIZACION\" (unas 33 diapositivas), Ley 18.099 (2 págs.) y Ley 18.251 (4 págs.). No está en el resumen. Armar el esquema.","opt":false},{"id":"2026-11-13-rc-1","f":"2026-11-13","m":"rc","min":90,"b":"1","tipo":"armar","n":3,"prov":true,"t":"Resp. Civil: módulo contractual en esquema, parte 1","d":"En EVA (Responsabilidad contractual: 46 archivos y unas 652 págs. de bibliografía, imposible de leer entera) hay 13 guías de clase de 1 a 3 págs. Usar solo las guías: incumplimiento, gravedad del incumplimiento, culpa contractual, imputabilidad e imposibilidad (2 págs. cada una). Mapa y preguntas clave.","opt":false},{"id":"2026-11-13-rc-2","f":"2026-11-13","m":"rc","min":90,"b":"2","tipo":"armar","n":3,"prov":true,"t":"Resp. Civil: módulo contractual en esquema, parte 2","d":"En EVA, de la misma sección, las guías de clase sobre mora del acreedor, teoría de los riesgos (3 págs.), medidas defensivas, daño contractual y cláusulas modificativas. Mapa y preguntas clave.","opt":false},{"id":"2026-11-14-rc-1","f":"2026-11-14","m":"rc","min":60,"b":"S","tipo":"armar","n":3,"prov":true,"t":"Resp. Civil: animales, cúmulo y responsabilidad del Estado (clase del 4/11)","d":"En EVA: presentación \"Responsabilidad del Estado\" (16 diapositivas) y la guía de clase. Bibliografía básica: Gamarra, Tratado t. XX, sección del cúmulo.","opt":false},{"id":"2026-11-14-rc-2","f":"2026-11-14","m":"rc","min":60,"b":"S","tipo":"armar","n":2,"prov":true,"t":"Resp. Civil: precontractual, postcontractual y defensa de la competencia (clase del 9/11)","d":"En EVA (pre y postcontractual, competencia): Alterwain sobre defensa de la competencia (20 págs.), presentación de Marchesano (20 diapositivas), sentencias y una guía de clase de 1 pág. Empezar por la guía.","opt":false},{"id":"2026-11-14-rc-3","f":"2026-11-14","m":"rc","min":60,"b":"S","tipo":"armar","n":2,"prov":true,"t":"Resp. Civil: relaciones de consumo (clase del 11/11)","d":"En EVA (Consumo: 16 archivos y unas 171 págs.): empezar por la \"Guía de módulo\" (2 págs.). Bibliografía básica: Gamarra, Guía de la Ley de Relaciones de Consumo y Tratado t. XXVI caps. 1 a 6.","opt":false},{"id":"2026-11-16-rc-1","f":"2026-11-16","m":"rc","min":60,"b":"1","tipo":"armar","n":2,"prov":true,"t":"Resp. Civil: responsabilidad profesional y obligación de seguridad (clase del 16/11)","d":"El programa no trae bibliografía de esta clase; usar lo que diga la docente.","opt":false},{"id":"2026-11-16-rc-2","f":"2026-11-16","m":"rc","min":60,"b":"1","tipo":"armar","n":2,"prov":true,"t":"Resp. Civil: tutela aquiliana del crédito (clase del 18/11)","d":"Bibliografía básica: Gamarra, Tratado t. XX y Responsabilidad Extracontractual (capítulo de inducción al incumplimiento).","opt":false},{"id":"2026-11-16-rc-3","f":"2026-11-16","m":"rc","min":120,"b":"2","tipo":"repaso","n":2,"prov":true,"t":"Resp. Civil: repaso de la primera mitad","d":"Resúmenes RC A y B págs. 1 a 54 (daño, daño moral, ilicitud, causalidad, culpa, objetiva) con las preguntas del final de cada tema.","opt":false},{"id":"2026-11-17-lab-1","f":"2026-11-17","m":"lab","min":120,"b":"1","tipo":"preguntas","n":1,"prov":false,"t":"Laboral: repaso final y preguntas antes del parcial","d":"Tercer parcial: trabajador, empleador y tercerización. Preguntas sin apuntes sobre los tres temas y las dos leyes. No empezar temas nuevos.","opt":false},{"id":"2026-11-18-dip-1","f":"2026-11-18","m":"dip","min":120,"b":"1","tipo":"repaso","n":3,"prov":true,"t":"DIP: repaso de sociedad, sujetos, Estado y territorio (primera mitad, 1/2)","d":"Resumen DIP 1 (107 págs.), solo subrayados. 144 páginas entre los dos resúmenes no se pueden leer enteras en este tiempo: ir a lo que ya subrayó.","opt":false},{"id":"2026-11-18-dip-2","f":"2026-11-18","m":"dip","min":60,"b":"2","tipo":"repaso","n":3,"prov":true,"t":"DIP: repaso de organizaciones internacionales y ONU (primera mitad, 2/2)","d":"Resumen DIP 1, solo subrayados de la parte de organizaciones y Naciones Unidas.","opt":false},{"id":"2026-11-18-dip-3","f":"2026-11-18","m":"dip","min":60,"b":"2","tipo":"repaso","n":3,"prov":true,"t":"DIP: repaso de fuentes, tratados y jus cogens","d":"Resumen DIP 2 (37 págs.), solo subrayados.","opt":false},{"id":"2026-11-19-dip-1","f":"2026-11-19","m":"dip","min":120,"b":"1","tipo":"preguntas","n":2,"prov":true,"t":"DIP: preguntas sin apuntes de la segunda mitad","d":"Espacios, mar, nacionalidad y asilo, derechos humanos, responsabilidad internacional, sanciones, DIH, diplomático y consular. Marcar lo que no sale.","opt":false},{"id":"2026-11-19-dip-2","f":"2026-11-19","m":"dip","min":120,"b":"2","tipo":"preguntas","n":2,"prov":true,"t":"DIP: preguntas sin apuntes de la primera mitad","d":"Sociedad, sujetos, Estado, territorio, ONU, fuentes, tratados, jus cogens. Marcar lo que no sale.","opt":false},{"id":"2026-11-20-dip-1","f":"2026-11-20","m":"dip","min":120,"b":"1","tipo":"preguntas","n":2,"prov":true,"t":"DIP: repaso de lo que falló y casos prácticos","d":"Parcial del 20/11 (viernes). Repasar lo marcado y practicar con los casos prácticos de la clase del 18/11; no empezar temas nuevos.","opt":false},{"id":"2026-11-21-rc-1","f":"2026-11-21","m":"rc","min":180,"b":"O","tipo":"preguntas","n":2,"prov":true,"t":"Resp. Civil: preguntas sobre contractual y daño (opcional)","d":"Fin de semana opcional. Resúmenes RC A y B págs. 1 a 54 y preguntas al final de cada tema.","opt":true},{"id":"2026-11-22-rc-1","f":"2026-11-22","m":"rc","min":180,"b":"O","tipo":"preguntas","n":2,"prov":true,"t":"Resp. Civil: preguntas sobre extracontractual y segunda mitad (opcional)","d":"Fin de semana opcional. Hecho ajeno, cosas, consumo, tutela del crédito y lo armado en la semana 4.","opt":true},{"id":"2026-11-23-rc-1","f":"2026-11-23","m":"rc","min":120,"b":"1","tipo":"preguntas","n":2,"prov":true,"t":"Resp. Civil: repaso final antes del parcial","d":"Parcial del 23/11 (lunes). Hay clase de DIP de 16 a 18 el mismo día. Solo repaso y preguntas.","opt":false}]};
+const LS = 'evaPlan.v1';
+const DIAS = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+const MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','setiembre','octubre','noviembre','diciembre'];
+const MAT = Object.fromEntries(DATA.materias.map(m => [m.id, m]));
+
+let estado = {done:{}, tema:null};
+try { const s = JSON.parse(localStorage.getItem(LS) || 'null'); if (s) estado = Object.assign(estado, s); } catch(e){}
+const guardar = () => { try { localStorage.setItem(LS, JSON.stringify(estado)); } catch(e){} };
+
+const ymd = d => d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+const parse = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
+const sumar = (d, n) => { const x = new Date(d); x.setDate(x.getDate()+n); return x; };
+const lunesDe = d => sumar(d, -((d.getDay()+6)%7));
+const largo = d => DIAS[d.getDay()] + ' ' + d.getDate();
+const completo = d => DIAS[d.getDay()] + ' ' + d.getDate() + ' de ' + MESES[d.getMonth()];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const forma = id => '<i class="forma f-' + MAT[id].forma + '"></i>';
+const tag = id => '<span class="tag m-' + id + '" style="--c:var(--' + MAT[id].css + ')">' + forma(id) + esc(MAT[id].corto) + '</span>';
+
+let hoyReal = new Date(); hoyReal.setHours(0,0,0,0);
+let dia = new Date(hoyReal);
+// Si se abre antes de que empiece el plan, mostrar el primer día del plan.
+const ini = parse(DATA.inicio), fin = parse(DATA.fin);
+if (dia < ini) dia = new Date(ini);
+if (dia > fin) dia = new Date(fin);
+let semana = lunesDe(dia);
+
+function eventosDe(f){ return DATA.eventos.filter(e => e.f === f).sort((a,b) => (a.h||'').localeCompare(b.h||'')); }
+function tareasDe(f){ return DATA.sesiones.filter(s => s.f === f); }
+function estadoDe(id){ return estado.done[id] || 0; }
+
+function htmlEvento(e){
+  const m = MAT[e.m];
+  return '<div class="clase m-' + e.m + (e.parcial ? ' parcial' : '') + '" style="--c:var(--' + m.css + ')">' +
+    '<div class="hora">' + esc(e.h || '') + '</div><div class="t">' + esc(e.t) + '</div>' +
+    '<div class="d">' + esc(m.nombre) + (e.d ? ' · ' + esc(e.d) : '') + '</div></div>';
+}
+const BLOQUE = {'1':'Bloque 1','2':'Bloque 2','S':'Sábado','O':'Opcional'};
+const TIPO = {lectura:'Lectura',repaso:'Repaso',armar:'Armar y leer',preguntas:'Preguntas'};
+const NIVEL = {1:'A fondo',2:'Para responder preguntas',3:'Esquema'};
+const dur = m => m % 60 === 0 ? (m / 60) + ' h' : (m < 60 ? m + ' min' : Math.floor(m / 60) + ' h ' + (m % 60) + ' min');
+function htmlTarea(s){
+  const st = estadoDe(s.id), m = MAT[s.m];
+  return '<div class="tarea m-' + s.m + '" data-s="' + st + '" style="--c:var(--' + m.css + ')">' +
+    '<button class="chk" type="button" data-id="' + s.id + '" data-s="' + st + '" aria-label="Marcar: ' + esc(s.t) + '">' + (st === 2 ? '✓' : '') + '</button>' +
+    '<div><div class="t">' + esc(s.t) + '</div>' + (s.d ? '<div class="d">' + esc(s.d) + '</div>' : '') +
+    '<div class="meta">' + tag(s.m) + '<span class="pill">' + dur(s.min) + '</span><span class="pill">' + (BLOQUE[s.b] || '') + '</span><span class="pill">' + (TIPO[s.tipo] || '') + '</span>' +
+    (s.n ? '<span class="pill">Nivel ' + s.n + ': ' + NIVEL[s.n] + '</span>' : '') + (s.prov ? '<span class="pill prov">provisorio</span>' : '') + '</div></div></div>';
+}
+function tareasHtml(ta){
+  const orden = {'1':1,'2':2,'S':0,'O':3};
+  return ta.slice().sort((a,b) => (orden[a.b] - orden[b.b])).map(htmlTarea).join('');
+}
+
+function pintarHoy(){
+  const f = ymd(dia);
+  document.getElementById('h-fecha').textContent = largo(dia);
+  document.getElementById('h-sub').textContent = completo(dia) + (ymd(dia) === ymd(hoyReal) ? ' · hoy' : '') + ' · ' + ((DATA.horarios || {})[dia.getDay()] || '');
+  const ev = eventosDe(f);
+  document.getElementById('h-clases').innerHTML = (ev.length ? ev.map(htmlEvento).join('') : '<p class="vacio">Sin clases ni parciales cargados este día.</p>') +
+    '<p class="aviso">Derecho Penal y Trabajo y Seguridad Social: martes y jueves de 17:30 a 22:00.</p>';
+  const ta = tareasDe(f);
+  document.getElementById('h-tareas').innerHTML = ta.length ? tareasHtml(ta) + '<p class="aviso">' + dur(ta.reduce((a, s) => a + s.min, 0)) + ' planificadas este día.</p>' : '<p class="vacio">Nada planificado en casa este día.</p>';
+  // atrasadas: sesiones anteriores a este día que no están completas (las opcionales no cuentan)
+  const atras = DATA.sesiones.filter(s => s.f < f && estadoDe(s.id) !== 2 && !s.opt);
+  const caja = document.getElementById('h-atras');
+  caja.innerHTML = atras.length ? '<div class="atras"><b>' + atras.length + ' sin completar de días anteriores.</b> Si querés que se reorganice el plan, tocá "Copiar avance" y mandá el texto por WhatsApp.</div>' : '';
+  // próximo parcial
+  const prox = DATA.parciales.filter(p => p.f >= f).sort((a,b) => a.f.localeCompare(b.f))[0];
+  const px = document.getElementById('h-prox'), pt = document.getElementById('h-prox-tit');
+  if (prox) { const dd = Math.round((parse(prox.f) - dia) / 864e5); pt.textContent = MAT[prox.m].nombre;
+    px.innerHTML = '<div class="par m-' + prox.m + '" style="--c:var(--' + MAT[prox.m].css + ')"><div class="n">' + dd + '<small>días</small></div><div><div class="t">' + esc(prox.t) + '</div><div class="d">' + completo(parse(prox.f)) + '</div></div><div>' + forma(prox.m) + '</div></div>'; }
+  else { pt.textContent = 'Parcial'; px.innerHTML = '<p class="vacio">No quedan parciales cargados.</p>'; }
+}
+
+function pintarSemana(){
+  const dias = [...Array(7)].map((_, i) => sumar(semana, i));
+  document.getElementById('s-tit').textContent = 'Semana del ' + semana.getDate();
+  document.getElementById('s-sub').textContent = MESES[semana.getMonth()] + ' ' + semana.getFullYear();
+  document.getElementById('s-dias').innerHTML = dias.map(d => {
+    const f = ymd(d), ev = eventosDe(f), ta = tareasDe(f);
+    const items = ev.map(e => '<div class="it">' + forma(e.m).replace('class="forma', 'style="--c:var(--' + MAT[e.m].css + ')" class="forma') + '<span><b>' + esc(e.h||'') + '</b> ' + esc(e.t) + '</span></div>').join('') +
+      ta.map(s => '<div class="it">' + forma(s.m).replace('class="forma', 'style="--c:var(--' + MAT[s.m].css + ')" class="forma') + '<span>' + (estadoDe(s.id) === 2 ? '✓ ' : '') + esc(s.t) + '</span></div>').join('');
+    return '<div class="dia' + (f === ymd(hoyReal) ? ' hoy' : '') + '"><h4>' + largo(d) + '</h4>' + (items || '<p class="vacio">Libre</p>') + '</div>';
+  }).join('');
+}
+
+function horasPara(p){
+  // Sesiones de la misma materia entre el parcial anterior de esa materia (sin incluirlo) y este (incluido).
+  const prev = DATA.parciales.filter(q => q.m === p.m && q.f < p.f).map(q => q.f).sort().pop() || '0000-00-00';
+  const ss = DATA.sesiones.filter(s => s.m === p.m && s.f > prev && s.f <= p.f);
+  const firmes = ss.filter(s => !s.opt), opc = ss.filter(s => s.opt);
+  const hechas = firmes.filter(s => estadoDe(s.id) === 2).reduce((a, s) => a + s.min, 0) + firmes.filter(s => estadoDe(s.id) === 1).reduce((a, s) => a + s.min / 2, 0);
+  const tot = firmes.reduce((a, s) => a + s.min, 0);
+  return {tot, hechas, opc: opc.reduce((a, s) => a + s.min, 0)};
+}
+function pintarParciales(){
+  const f = ymd(hoyReal);
+  document.getElementById('p-lista').innerHTML = DATA.parciales.slice().sort((a,b) => a.f.localeCompare(b.f)).map(p => {
+    const dd = Math.round((parse(p.f) - hoyReal) / 864e5), h = horasPara(p);
+    const hs = '<br>Estudio planificado: ' + dur(h.tot) + (h.opc ? ' (+ ' + dur(h.opc) + ' opcionales)' : '') + ' · hecho: ' + dur(Math.round(h.hechas));
+    return '<div class="par m-' + p.m + (p.f < f ? ' pasado' : '') + '" style="--c:var(--' + MAT[p.m].css + ')"><div class="n">' + (dd >= 0 ? dd : '·') + '<small>' + (dd >= 0 ? 'días' : 'hecho') + '</small></div>' +
+      '<div><div class="t">' + esc(MAT[p.m].nombre) + '</div><div class="d">' + completo(parse(p.f)) + ' · ' + esc(p.t) + hs + '</div></div><div>' + forma(p.m) + '</div></div>';
+  }).join('');
+}
+
+function pintar(){ pintarHoy(); pintarSemana(); pintarParciales(); }
+
+function textoAvance(){
+  const hoy = ymd(hoyReal), L = ['AVANCE ' + completo(hoyReal)];
+  const por = {};
+  DATA.sesiones.filter(s => s.f <= hoy && !s.opt).forEach(s => { (por[s.m] = por[s.m] || []).push(s); });
+  Object.keys(por).forEach(m => {
+    const a = por[m], h = a.filter(s => estadoDe(s.id) === 2), p = a.filter(s => estadoDe(s.id) === 1), n = a.filter(s => !estadoDe(s.id));
+    L.push('', MAT[m].nombre + ': ' + h.length + ' hechas, ' + p.length + ' parciales, ' + n.length + ' pendientes');
+    p.forEach(s => L.push('  parcial: ' + s.f + ' ' + s.t));
+    n.forEach(s => L.push('  pendiente: ' + s.f + ' ' + s.t));
+  });
+  const fut = DATA.sesiones.filter(s => s.f > hoy && estadoDe(s.id)).length;
+  if (fut) L.push('', 'Adelantadas: ' + fut);
+  L.push('', 'Plan: ' + DATA.version);
+  return L.join('\n');
+}
+function aviso(t){ const el = document.getElementById('toast'); el.textContent = t; el.classList.add('on'); setTimeout(() => el.classList.remove('on'), 2400); }
+
+document.addEventListener('click', e => {
+  const c = e.target.closest('.chk');
+  if (c) { const id = c.dataset.id; estado.done[id] = ((estado.done[id] || 0) + 1) % 3; if (!estado.done[id]) delete estado.done[id]; guardar(); pintar(); }
+});
+document.getElementById('h-prev').onclick = () => { dia = sumar(dia, -1); pintarHoy(); };
+document.getElementById('h-next').onclick = () => { dia = sumar(dia, 1); pintarHoy(); };
+document.getElementById('h-hoy').onclick = () => { dia = new Date(hoyReal < ini ? ini : hoyReal); pintarHoy(); };
+document.getElementById('s-prev').onclick = () => { semana = sumar(semana, -7); pintarSemana(); };
+document.getElementById('s-next').onclick = () => { semana = sumar(semana, 7); pintarSemana(); };
+document.getElementById('s-hoy').onclick = () => { semana = lunesDe(hoyReal < ini ? ini : hoyReal); pintarSemana(); };
+document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.tabs button').forEach(x => x.setAttribute('aria-selected', x === b));
+  ['hoy','semana','parciales'].forEach(v => document.getElementById('v-' + v).hidden = v !== b.dataset.v);
+});
+document.getElementById('btn-copiar').onclick = async () => {
+  const t = textoAvance();
+  try { await navigator.clipboard.writeText(t); aviso('Copiado. Pegalo en WhatsApp.'); }
+  catch(e){ const a = document.createElement('textarea'); a.value = t; document.body.appendChild(a); a.select(); try { document.execCommand('copy'); aviso('Copiado. Pegalo en WhatsApp.'); } catch(_) { aviso('No se pudo copiar'); } a.remove(); }
+};
+document.getElementById('btn-tema').onclick = () => {
+  const r = document.documentElement, oscuro = r.dataset.theme === 'dark' || (!r.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+  r.dataset.theme = oscuro ? 'light' : 'dark'; estado.tema = r.dataset.theme; guardar();
+};
+if (estado.tema) document.documentElement.dataset.theme = estado.tema;
+document.getElementById('aviso').textContent = DATA.aviso || '';
+pintar();
+</script>
+</body>
+</html>
